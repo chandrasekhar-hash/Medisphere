@@ -9,7 +9,7 @@ interface Reminder {
   id: string;
   medicine: string;
   dose: string;
-  times: string[];
+  times?: string[];
   frequency: "daily" | "twice" | "thrice" | "four" | "weekly";
   notes: string;
   active: boolean;
@@ -151,7 +151,7 @@ export default function PillReminderPage() {
     setForm({ 
       medicine: r.medicine, 
       dose: r.dose, 
-      times: r.times || [r.time || "08:00"], 
+      times: r.times || [(r as any).time || "08:00"], 
       frequency: r.frequency, 
       notes: r.notes 
     }); 
