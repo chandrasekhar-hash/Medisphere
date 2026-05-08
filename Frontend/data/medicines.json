@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Paracetamol 500mg",
+    "category": "Medicine",
+    "uses": ["Pain relief", "Fever reduction"],
+    "dosage": "500mg tablet, 1-2 tablets every 4-6 hours as needed",
+    "sideEffects": ["Nausea", "Liver toxicity at high doses"],
+    "expiryWarning": "Do not use after expiration date",
+    "safetyPrecautions": ["Avoid alcohol", "Do not exceed recommended dose"],
+    "prescriptionRequired": false
+  },
+  {
+    "name": "Crocin",
+    "category": "Medicine",
+    "uses": ["Pain relief", "Fever reduction"],
+    "dosage": "500mg tablet, 1-2 tablets every 4-6 hours",
+    "sideEffects": ["Stomach upset"],
+    "expiryWarning": "Discard after expiry",
+    "safetyPrecautions": ["Take after food"],
+    "prescriptionRequired": false
+  },
+  {
+    "name": "Dolo 650",
+    "category": "Medicine",
+    "uses": ["Pain relief", "Fever reduction"],
+    "dosage": "650mg tablet, 1 tablet every 6-8 hours",
+    "sideEffects": ["Headache", "Dizziness"],
+    "expiryWarning": "Check expiry date",
+    "safetyPrecautions": ["Do not exceed 4 tablets per day"],
+    "prescriptionRequired": false
+  }
+]

@@ -1,0 +1,175 @@
+/* ─────────────────────────────────────────
+   Google Fonts — MUST be first import
+──────────────────────────────────────────*/
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:wght@300;400;500;600;700&display=swap");
+
+@import "tailwindcss";
+
+/* ─────────────────────────────────────────
+   Tailwind v4 Design Tokens (CSS-first)
+──────────────────────────────────────────*/
+@theme {
+  /* Color Palette — Warm Luxury Healthcare */
+  --color-cream:        #FAF7F2;
+  --color-beige:        #F5F0E8;
+  --color-beige-dark:   #EDE7DA;
+  --color-warm-white:   #FDFBF8;
+  --color-warm-brown:   #8B7355;
+  --color-warm-brown-light: #A68B6A;
+  --color-warm-brown-dark:  #6B5840;
+  --color-muted-peach:  #E8C4A0;
+  --color-soft-peach:   #F2D9C0;
+  --color-deep-peach:   #D4956A;
+  --color-sage:         #A8B89A;
+  --color-sage-light:   #C5D4B8;
+  --color-sage-dark:    #7A9470;
+  --color-charcoal:     #2C2416;
+  --color-charcoal-soft:#4A3F2E;
+  --color-warm-gray:    #8A7E70;
+  --color-warm-gray-light: #C4BAB0;
+  --color-warm-gray-pale:  #E8E2D9;
+  --color-rose-blush:   #E8C4C4;
+  --color-gold:         #C9A84C;
+  --color-gold-light:   #E8D49A;
+
+  /* Typography */
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-sans:    "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Border Radius */
+  --radius-2xl:  1rem;
+  --radius-3xl:  1.5rem;
+  --radius-4xl:  2rem;
+  --radius-5xl:  2.5rem;
+
+  /* Shadows */
+  --shadow-warm-sm:  0 2px 12px 0 rgba(139, 115, 85, 0.08);
+  --shadow-warm:     0 4px 24px 0 rgba(139, 115, 85, 0.12);
+  --shadow-warm-lg:  0 8px 48px 0 rgba(139, 115, 85, 0.18);
+  --shadow-warm-xl:  0 16px 64px 0 rgba(139, 115, 85, 0.22);
+  --shadow-glass:    0 8px 32px 0 rgba(139, 115, 85, 0.10), inset 0 1px 0 rgba(255,255,255,0.6);
+}
+
+/* ─────────────────────────────────────────
+   Base Resets & Body
+──────────────────────────────────────────*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--color-cream);
+  color: var(--color-charcoal);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ─────────────────────────────────────────
+   Noise / Grain Texture Overlay
+──────────────────────────────────────────*/
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.028;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 128px 128px;
+}
+
+/* ─────────────────────────────────────────
+   Typography Utilities
+──────────────────────────────────────────*/
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+/* ─────────────────────────────────────────
+   Scrollbar Styling
+──────────────────────────────────────────*/
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-beige);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-warm-gray-light);
+  border-radius: 999px;
+}
+
+/* ─────────────────────────────────────────
+   Selection
+──────────────────────────────────────────*/
+::selection {
+  background: rgba(232, 196, 160, 0.4);
+  color: var(--color-charcoal);
+}
+
+/* ─────────────────────────────────────────
+   Glassmorphism Card Base
+──────────────────────────────────────────*/
+.glass-card {
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  box-shadow: var(--shadow-glass);
+}
+
+.glass-card-strong {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(32px) saturate(200%);
+  -webkit-backdrop-filter: blur(32px) saturate(200%);
+  border: 1px solid rgba(255, 255, 255, 0.80);
+  box-shadow: var(--shadow-warm-lg);
+}
+
+/* ─────────────────────────────────────────
+   Input Focus Glow
+──────────────────────────────────────────*/
+.input-luxury {
+  background: rgba(255, 255, 255, 0.6);
+  border: 1.5px solid rgba(139, 115, 85, 0.18);
+  border-radius: 14px;
+  padding: 14px 18px;
+  font-family: var(--font-sans);
+  font-size: 15px;
+  color: var(--color-charcoal);
+  outline: none;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+  width: 100%;
+}
+.input-luxury::placeholder {
+  color: var(--color-warm-gray-light);
+}
+.input-luxury:focus {
+  border-color: rgba(139, 115, 85, 0.45);
+  box-shadow: 0 0 0 4px rgba(232, 196, 160, 0.20);
+  background: rgba(255, 255, 255, 0.85);
+}
+
+/* ─────────────────────────────────────────
+   Rounded Utilities
+──────────────────────────────────────────*/
+.rounded-4xl {
+  border-radius: 2rem;
+}
+.rounded-5xl {
+  border-radius: 2.5rem;
+}
