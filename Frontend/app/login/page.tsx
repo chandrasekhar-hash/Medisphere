@@ -112,7 +112,7 @@ export default function LoginPage() {
                     <div>
                       <div className="relative">
                         <User className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 pointer-events-none" style={{ color: "var(--color-warm-gray-light)" }} strokeWidth={1.6} />
-                        <input type="text" placeholder="Your full name" value={name} onChange={(e) => setName(e.target.value)} className="input-luxury pl-11"
+                        <input type="text" placeholder="Your full name" value={name} onChange={(e) => setName(e.target.value)} className="input-luxury !pl-12"
                           style={errors.name ? { borderColor: "rgba(212,149,106,0.6)" } : {}} />
                       </div>
                       {errors.name && <p className="text-xs mt-1.5 ml-1" style={{ color: "var(--color-deep-peach)" }}>{errors.name}</p>}
@@ -121,7 +121,7 @@ export default function LoginPage() {
                     <div>
                       <div className="relative">
                         <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 pointer-events-none" style={{ color: "var(--color-warm-gray-light)" }} strokeWidth={1.6} />
-                        <input type="email" placeholder="Email address" value={email} onChange={(e) => setEmail(e.target.value)} className="input-luxury pl-11"
+                        <input type="email" placeholder="Email address" value={email} onChange={(e) => setEmail(e.target.value)} className="input-luxury !pl-12"
                           style={errors.email ? { borderColor: "rgba(212,149,106,0.6)" } : {}} />
                       </div>
                       {errors.email && <p className="text-xs mt-1.5 ml-1" style={{ color: "var(--color-deep-peach)" }}>{errors.email}</p>}
@@ -130,7 +130,7 @@ export default function LoginPage() {
                     <div>
                       <div className="relative">
                         <Lock className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 pointer-events-none" style={{ color: "var(--color-warm-gray-light)" }} strokeWidth={1.6} />
-                        <input type={showPassword ? "text" : "password"} placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} className="input-luxury pl-11 pr-11"
+                        <input type={showPassword ? "text" : "password"} placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} className="input-luxury !pl-12 !pr-12"
                           style={errors.password ? { borderColor: "rgba(212,149,106,0.6)" } : {}} />
                         <button type="button" onClick={() => setShowPassword(!showPassword)} className="absolute right-4 top-1/2 -translate-y-1/2 hover:opacity-70" style={{ color: "var(--color-warm-gray-light)" }}>
                           {showPassword ? <EyeOff className="w-4 h-4" strokeWidth={1.6} /> : <Eye className="w-4 h-4" strokeWidth={1.6} />}
