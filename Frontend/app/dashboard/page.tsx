@@ -40,7 +40,7 @@ export default function DashboardPage() {
   const firstName = user?.name?.split(" ")[0] ?? "there";
 
   return (
-    <div className="px-8 xl:px-12 py-10 max-w-5xl">
+    <div className="px-6 sm:px-8 xl:px-12 py-10 max-w-5xl">
       <motion.div className="mb-10" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, ease: [0.25, 0.46, 0.45, 0.94] }}>
         <p className="text-sm mb-2" style={{ color: "var(--color-warm-gray)" }}>{greeting} {emoji}</p>
         <h1 className="font-display text-5xl xl:text-6xl font-light leading-[1.1] mb-3" style={{ color: "var(--color-charcoal)" }}>
@@ -50,7 +50,7 @@ export default function DashboardPage() {
       </motion.div>
 
       {/* Stats */}
-      <motion.div className="grid grid-cols-3 gap-4 mb-12" initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.1 }}>
+      <motion.div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12" initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.1 }}>
         {healthStats.map((stat) => {
           const Icon = stat.icon;
           return (

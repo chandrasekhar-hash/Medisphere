@@ -129,7 +129,7 @@ export default function RecordsVaultPage() {
 
 
   return (
-    <div className="px-8 xl:px-12 py-10 max-w-3xl">
+    <div className="px-6 sm:px-8 xl:px-12 py-10 max-w-3xl">
       {/* Header */}
       <motion.div className="mb-10" initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
         <div className="flex items-center gap-3 mb-4">
@@ -146,7 +146,7 @@ export default function RecordsVaultPage() {
       </motion.div>
 
       {/* Stats Strip */}
-      <motion.div className="grid grid-cols-3 gap-4 mb-7" initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}>
+      <motion.div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-7" initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}>
         {[
           { label: "Documents", value: docs.length, icon: FileText, color: "#D4956A", bg: "rgba(232,196,160,0.18)" },
           { label: "Encrypted", value: "AES-256", icon: Shield, color: "#7A9470", bg: "rgba(168,184,154,0.18)" },
@@ -160,7 +160,7 @@ export default function RecordsVaultPage() {
               </div>
               <div>
                 <p className="text-[10.5px]" style={{ color: "var(--color-warm-gray)" }}>{s.label}</p>
-                <p className="text-sm font-semibold" style={{ color: "var(--color-charcoal)" }}>{s.value}</p>
+                <p className="text-sm font-semibold whitespace-nowrap" style={{ color: "var(--color-charcoal)" }}>{s.value}</p>
               </div>
             </div>
           );
